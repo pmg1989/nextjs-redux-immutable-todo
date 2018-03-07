@@ -1,0 +1,19 @@
+{
+  "presets": [
+    "env",
+    "next/babel"
+  ],
+  "plugins": [
+    ["module-resolver", {
+      "root": ["./src"]
+    }]
+  ],
+  "env": {
+    "development": {
+      "plugins": ["inline-dotenv"]
+    },
+    "production": {
+      "plugins": ["transform-inline-environment-variables"]
+    }
+  }
+}
