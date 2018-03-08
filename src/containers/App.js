@@ -53,7 +53,7 @@ class App extends Component {
     }
 
     return (
-      <div id="viewport">
+      <div className="viewport">
         <TaskForm onSave={onTaskAdd} />
         <TaskList {...taskListProps} />
         <TaskStats {...taskStatsProps} />
