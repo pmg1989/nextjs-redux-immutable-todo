@@ -10,7 +10,6 @@ import { fetchTaskList, taskAdd, taskDone, taskUndone, taskRemove, taskEdit, tas
 
 class App extends Component {
   static propTypes = {
-    children: PropTypes.node,
     tasks: PropTypes.object.isRequired,
     taskCount: PropTypes.number.isRequired,
     doneTaskCount: PropTypes.number.isRequired,
@@ -30,7 +29,7 @@ class App extends Component {
   }
 
   render () {
-    const { children, tasks, taskCount, doneTaskCount, filters,
+    const { tasks, taskCount, doneTaskCount, filters,
             onTaskAdd, onTaskDone, onTaskUndone, onTaskRemove, onTaskEdit, onTaskFilter,
           } = this.props
 
@@ -54,7 +53,6 @@ class App extends Component {
         <TaskForm onSave={onTaskAdd} />
         <TaskList {...taskListProps} />
         <TaskStats {...taskStatsProps} />
-        {children}
       </div>
     )
   }
