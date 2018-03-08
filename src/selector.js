@@ -26,9 +26,5 @@ export default (state) => {
     filters: taskFilterSelector(state.get('tasks')),
     taskCount: taskSelector(state.get('tasks')).count(),
     doneTaskCount: doneTaskSelector(state.get('tasks')).count(),
-    // tasks: taskVisibleSelector(state.tasks),
-    // filters: taskFilterSelector(state.tasks),
-    // taskCount: taskSelector(state.tasks).count(),
-    // doneTaskCount: doneTaskSelector(state.tasks).count(),
   }
 }
