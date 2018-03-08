@@ -14,7 +14,7 @@ class App extends Component {
     taskCount: PropTypes.number.isRequired,
     doneTaskCount: PropTypes.number.isRequired,
     filters: PropTypes.string.isRequired,
-    onFetchTaskList: PropTypes.func.isRequired,
+    // onFetchTaskList: PropTypes.func.isRequired,
     onTaskAdd: PropTypes.func.isRequired,
     onTaskDone: PropTypes.func.isRequired,
     onTaskUndone: PropTypes.func.isRequired,
@@ -23,10 +23,14 @@ class App extends Component {
     onTaskFilter: PropTypes.func.isRequired,
   }
 
-  componentDidMount () {
-    const { onFetchTaskList } = this.props
-    onFetchTaskList()
+  static async getInitialProps({ store, query }) {
+    await store.dispatch(fetchTaskList())
   }
+
+  // componentDidMount () {
+  //   const { onFetchTaskList } = this.props
+  //   onFetchTaskList()
+  // }
 
   render () {
     const { tasks, taskCount, doneTaskCount, filters,
@@ -59,7 +63,7 @@ class App extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  onFetchTaskList: bindActionCreators(fetchTaskList, dispatch),
+  // onFetchTaskList: bindActionCreators(fetchTaskList, dispatch),
   onTaskAdd: bindActionCreators(taskAdd, dispatch),
   onTaskDone: bindActionCreators(taskDone, dispatch),
   onTaskUndone: bindActionCreators(taskUndone, dispatch),
