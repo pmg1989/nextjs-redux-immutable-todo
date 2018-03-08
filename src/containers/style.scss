@@ -1,0 +1,106 @@
+html, body, ul, li, input, dl, dt, dd {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  font: 16px/22px 'helvetica-neue', 'Helvetica Neue', Helvetica, Arial, Sans-Serif;
+  background: #E9E9E9;
+}
+
+#viewport {
+  width: 440px;
+  background: #fff;
+  margin: 40px auto;
+}
+
+.component-task-form {}
+
+.component-task-form input {
+  display: block;
+  font: inherit;
+  height: 84px;
+  width: 400px;
+  padding: 0 18px;
+  font-size: 20px;
+}
+
+.component-task-form button {
+  display: none;
+}
+
+.component-todo-item > div{
+  min-height: 84px;
+  border-bottom: 1px solid #ccc;
+}
+
+.component-todo-item .name {
+  float: left;
+  padding: 31px 20px;
+  display: block;
+  width: 230px;
+}
+
+.component-todo-item .toggle-status {
+  float: right;
+  width: 84px;
+  height: 84px;
+  cursor: pointer;
+  background: #4054B2;
+}
+
+.component-todo-item.status-done .toggle-status {
+  background: #4CAF50;
+}
+
+.component-todo-item .remove-status {
+  float: right;
+  width: 84px;
+  height: 84px;
+  cursor: pointer;
+  background: #F44336;
+}
+
+.filter-list {
+  display: flex;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.filter-list li {
+  flex: 1;
+}
+
+.filter-list li span {
+  cursor: pointer;
+  display: inline-block;
+  padding: 3px 0;
+  width: 90px;
+}
+
+.filter-list li .active {
+  color: red;
+  border:1px solid red;
+  border-radius: 3px;
+}
+
+.component-task-stats dl {
+  display: block;
+  overflow: hidden;
+  padding: 20px;
+  text-align: right;
+}
+
+.component-task-stats dt, .component-task-stats dd {}
+
+.component-task-stats dt {
+  float: left;
+  margin: 0 5px 0 0;
+}
+
+.component-task-stats dd {}

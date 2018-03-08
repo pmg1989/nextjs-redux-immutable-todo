@@ -1,7 +1,11 @@
 {
   "presets": [
     "env",
-    "next/babel"
+    "next/babel",
+    "react",
+    "es2015",
+    "stage-0",
+    "stage-1"
   ],
   "plugins": [
     ["module-resolver", {
@@ -13,7 +17,11 @@
       "plugins": ["inline-dotenv"]
     },
     "production": {
-      "plugins": ["transform-inline-environment-variables"]
+      "plugins": ["transform-runtime",
+        "transform-decorators-legacy",
+        "transform-class-properties",
+        "transform-inline-environment-variables"
+      ]
     }
   }
 }
