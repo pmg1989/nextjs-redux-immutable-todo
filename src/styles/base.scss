@@ -1,1 +1,105 @@
-@import "~normalize.css";
+// @import "~normalize.css";
+html,
+body,
+ul,
+li,
+input,
+dl,
+dt,
+dd {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    font: 16px/22px 'helvetica-neue', 'Helvetica Neue', Helvetica, Arial, Sans-Serif;
+    background: #E9E9E9;
+}
+
+#viewport {
+    width: 440px;
+    background: #fff;
+    margin: 40px auto;
+}
+
+.component-task-form {
+    input {
+        display: block;
+        font: inherit;
+        height: 84px;
+        width: 400px;
+        padding: 0 18px;
+        font-size: 20px;
+    }
+    button {
+        display: none;
+    }
+}
+
+.component-todo-item {
+    .task-item {
+        min-height: 84px;
+        border-bottom: 1px solid #ccc;
+    }
+    .name {
+        float: left;
+        padding: 31px 20px;
+        display: block;
+        width: 230px;
+    }
+    .toggle-status {
+        float: right;
+        width: 84px;
+        height: 84px;
+        cursor: pointer;
+        background: #4054B2;
+    }
+    &.status-done .toggle-status {
+        background: #4CAF50;
+    }
+    .remove-status {
+        float: right;
+        width: 84px;
+        height: 84px;
+        cursor: pointer;
+        background: #F44336;
+    }
+}
+
+.filter-list {
+    display: flex;
+    text-align: center;
+    padding-top: 20px;
+    li {
+        flex: 1;
+        span {
+            cursor: pointer;
+            display: inline-block;
+            padding: 3px 0;
+            width: 90px;
+        }
+        .active {
+            color: red;
+            border: 1px solid red;
+            border-radius: 3px;
+        }
+    }
+}
+
+.component-task-stats {
+    dl {
+        display: block;
+        overflow: hidden;
+        padding: 20px;
+        text-align: right;
+    }
+    dt {
+        float: left;
+        margin: 0 5px 0 0;
+    }
+}

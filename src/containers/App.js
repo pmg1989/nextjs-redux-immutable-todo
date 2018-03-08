@@ -7,7 +7,6 @@ import TaskList from '../components/TaskList'
 import TaskStats from '../components/TaskStats'
 import selector from '../selector'
 import { fetchTaskList, taskAdd, taskDone, taskUndone, taskRemove, taskEdit, taskFilter } from '../actions'
-import styles from './style.scss'
 
 class App extends Component {
   static propTypes = {

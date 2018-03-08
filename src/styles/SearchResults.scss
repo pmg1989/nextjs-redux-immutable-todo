@@ -1,14 +1,1 @@
-.container {
-  width: 300px;
-  padding: 1em;
-  margin: 0 auto;
-  li {
-    background: #eee;
-  }
 
-  $hover-color: #f9f9f9;
-
-  &:hover {
-    background: $hover-color;
-  }
-}

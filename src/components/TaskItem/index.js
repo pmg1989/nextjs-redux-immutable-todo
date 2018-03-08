@@ -49,13 +49,11 @@ export default class extends Component {
     const { name, done } = this.props
     const { isEdit } = this.state
 
-    const componentClassName = classNames('component-todo-item', { 'status-done': done })
-
     return (
-      <div className={componentClassName}>
+      <div className={classNames('component-todo-item', { 'status-done': done })}>
         {isEdit ?
           <TaskForm onSave={::this.handleTaskEdit} onBlur={::this.changeEditState} value={name} /> :
-          <div>
+          <div className="task-item">
             <span className="name" onDoubleClick={::this.changeEditState}
               style={{
                 textDecoration: done
