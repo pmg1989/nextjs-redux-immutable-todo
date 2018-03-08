@@ -16,7 +16,7 @@ app.prepare().then(() => {
   const server = express()
 
   if (process.env.NODE_ENV === "production") {
-    app.use(compression())
+    server.use(compression())
   }
 
   server.get('*', (req, res) => {
