@@ -1,1 +1,4 @@
-export default props => <h1>About</h1>
+import withReduxStore from 'store/createStore'
+import About from 'containers/Demo'
+
+export default withReduxStore(About)

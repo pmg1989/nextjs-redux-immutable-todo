@@ -1,12 +1,13 @@
 import React from 'react'
-import styles from './Demo.less'
+// import styles from './Demo.less'
+// className={styles.box}
 
 const Demo = () => {
   return (
-    <div className={styles.box}>
+    <div>
       <span>
         i am demo
-      </span>
+      </span><br />
       <span>
         i am demo
       </span>
