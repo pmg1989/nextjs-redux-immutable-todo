@@ -1,7 +1,7 @@
 
 const express = require('express')
 const path = require('path')
-const compression = require('compression')
+// const compression = require('compression')
 const next = require('next')
 
 const routes = require('../routes')
@@ -15,7 +15,7 @@ const handler = routes.getRequestHandler(app)
 app.prepare().then(() => {
   const server = express()
 
-  server.use(compression())
+  // server.use(compression())
   server.get('*', (req, res) => {
     if (req.url === '/sw.js') {
       return app.serveStatic(req, res, path.resolve('./static/sw.js'))
