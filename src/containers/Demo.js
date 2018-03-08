@@ -1,18 +1,50 @@
 import React from 'react'
-import Nav from '../components/Nav'
-// import styles from './Demo.scss'
+import { compose } from 'redux'
+// import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
+import { hocForm, InputItem, hocDebug, stringify } from '../components/Hoc-form'
 
-const Demo = () => {
-  return (
-    <div className="viewport">
-      <Nav />
-      <div className="box">
-        <span>i am demo</span>
-        <span>i am demo</span>
+
+class Demo2 extends React.Component {
+  static propTypes = {
+    fields: PropTypes.func.isRequired,
+    getFields: PropTypes.func.isRequired,
+  }
+
+  componentDidMount () {
+    console.log(this.props)
+  }
+
+  submit (e) {
+    e.preventDefault()
+    console.log(this.props.getFields())
+  }
+
+  render () {
+    const { fields } = this.props
+
+    return (
+      <div>
+        <h4>Wrapped Component</h4>
+        <p>Props fields</p>
+        <pre>{stringify(this.props.getFields())}</pre>
+        <form onSubmit={::this.submit}>
+          <InputItem label="name" {...fields('name')} />
+          <InputItem label="email" {...fields('email', {
+            initialValue: '972401854@qq.com',
+          })}
+          />
+          <InputItem label="phone" {...fields('phone')} />
+          <input type="submit" value="submit" />
+        </form>
       </div>
-      {/* <style jsx>{styles}</style> */}
-    </div>
-  )
+    )
+  }
 }
 
-export default Demo
+export default compose(
+  // 单参数的高阶组件
+  // connect(),
+  hocDebug,
+  hocForm,
+)(Demo2)

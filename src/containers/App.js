@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import PropTypes from 'prop-types'
+import Head from 'next/head'
 import Nav from '../components/Nav'
 import TaskForm from '../components/TaskForm'
 import TaskList from '../components/TaskList'
@@ -55,6 +56,9 @@ class App extends Component {
 
     return (
       <div className="viewport">
+        <Head>
+          <title>home</title>
+        </Head>
         <Nav />
         <TaskForm onSave={onTaskAdd} />
         <TaskList {...taskListProps} />
