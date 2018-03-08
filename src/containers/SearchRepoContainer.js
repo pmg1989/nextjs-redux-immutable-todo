@@ -7,7 +7,7 @@ class SearchRepoContainer extends Component {
   render () {
     let { repos } = this.props
     return (
-      <div>hahahaha</div>
+      <div>hahahaha222</div>
     )
   }
 }
