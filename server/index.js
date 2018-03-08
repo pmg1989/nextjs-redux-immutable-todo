@@ -18,6 +18,7 @@ app.prepare().then(() => {
   if (process.env.NODE_ENV === "production") {
     app.use(compression())
   }
+
   server.get('*', (req, res) => {
     if (req.url === '/sw.js') {
       return app.serveStatic(req, res, path.resolve('./static/sw.js'))
