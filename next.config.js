@@ -1,4 +1,6 @@
 const { ANALYZE, ASSET_HOST } = process.env
+const path = require('path')
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 
 // for those who using CDN
 const assetPrefix = ASSET_HOST || 'http://localhost:3000'
@@ -31,6 +33,33 @@ module.exports = {
           options: { sourceMap: dev }
         }]
     })
+
+    /* Enable only in Production */
+    if (!dev) {
+      // Service Worker
+      config.plugins.push(
+        new SWPrecacheWebpackPlugin({
+          cacheId: 'next-ss',
+          filepath: './static/sw.js',
+          minify: true,
+          staticFileGlobsIgnorePatterns: [/\.next\//],
+          staticFileGlobs: [
+            'static/**/*' // Precache all static files by default
+          ],
+          runtimeCaching: [
+            // Example with different handlers
+            {
+              handler: 'fastest',
+              urlPattern: /[.](png|jpg|css)/
+            },
+            {
+              handler: 'networkFirst',
+              urlPattern: /^http.*/ //cache all files
+            }
+          ]
+        })
+      )
+    }
 
     return config
   }

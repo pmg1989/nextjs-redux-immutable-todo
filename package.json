@@ -38,6 +38,7 @@
     "rimraf": "^2.6.2",
     "snazzy": "^7.0.0",
     "standard": "^10.0.3",
+    "sw-precache-webpack-plugin": "^0.11.4",
     "webpack-bundle-analyzer": "^2.9.1"
   },
   "scripts": {
