@@ -1,12 +1,16 @@
 import React from 'react'
-import styles from './Demo.scss'
+import Nav from '../components/Nav'
+// import styles from './Demo.scss'
 
 const Demo = () => {
   return (
-    <div className="box">
-      <span>i am demo</span>
-      <span>i am demo</span>
-      <style jsx="true">{styles}</style>
+    <div className="viewport">
+      <Nav />
+      <div className="box">
+        <span>i am demo</span>
+        <span>i am demo</span>
+      </div>
+      {/* <style jsx>{styles}</style> */}
     </div>
   )
 }
