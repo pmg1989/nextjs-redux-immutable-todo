@@ -1,6 +1,6 @@
 {
-  "name": "NextSimpleStarter",
-  "short_name": "Next PWA",
+  "name": "nextjs-redux-immutable-todo",
+  "short_name": "next redux todo",
   "icons": [
     {
       "src": "img/apple-touch-icon-120x120.png",
