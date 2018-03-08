@@ -16,41 +16,20 @@ function createMiddlewares ({ isServer }) {
     middlewares.push(createLogger({
       level: 'info',
       collapsed: true,
-      stateTransformer: (state) => {
-        let newState = {}
-
-        for (let i of Object.keys(state)) {
-          if (Immutable.Iterable.isIterable(state[i])) {
-            newState[i] = state[i].toJS()
-          } else {
-            newState[i] = state[i]
-          }
-        }
-
-        return newState
-      }
+      stateTransformer: state => state.toJS(),
     }))
   }
 
   return middlewares
 }
 
-function immutableChildren (obj) {
-  let state = {}
-  Object.keys(obj).map((key) => {
-    state[key] = Immutable.fromJS(obj[key])
-  })
-  return state
-}
-
 export const initStore = (initialState = {}, context) => {
-  let { isServer } = context
-  let middlewares = createMiddlewares({ isServer })
-  let state = immutableChildren(initialState)
+  const { isServer } = context
+  const middlewares = createMiddlewares({ isServer })
 
   return createStore(
     rootReducer,
-    state,
+    Immutable.fromJS(initialState),
     compose(
       applyMiddleware(...middlewares),
       typeof window !== 'undefined' && window.devToolsExtension ? window.devToolsExtension() : f => f
