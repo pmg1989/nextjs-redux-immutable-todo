@@ -1,16 +1,16 @@
 import React from 'react'
-// import styles from './Demo.less'
-// className={styles.box}
+import styles from './Demo.scss'
 
 const Demo = () => {
   return (
-    <div>
+    <div className="box">
       <span>
         i am demo
       </span><br />
       <span>
         i am demo
       </span>
+      <style jsx="true">{styles}</style>
     </div>
   )
 }
