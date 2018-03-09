@@ -26,8 +26,13 @@ export default () => (
         </Link>
       </li>
       <li>
-        <Link activeClassName='active' href='/about'>
-          <a className='nav-link'>About</a>
+        <Link activeClassName='active' href='/list'>
+          <a className='nav-link'>list</a>
+        </Link>
+      </li>
+      <li>
+        <Link route='list-detail' params={{ id: 1 }} activeClassName='active'>
+          <a className='nav-link'>list-detail</a>
         </Link>
       </li>
     </ul>
