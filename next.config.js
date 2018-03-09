@@ -10,6 +10,13 @@ module.exports = {
   webpack: (config, { dev }) => {
     config.output.publicPath = `${assetPrefix}${config.output.publicPath}`
 
+    config.resolve.alias = {
+      components: path.resolve('./components'),
+      utils: path.resolve('./utils'),
+      constants: path.resolve('./constants'),
+      actions: path.resolve('./actions')
+    }
+
     if (ANALYZE) {
       const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
       config.plugins.push(new BundleAnalyzerPlugin({

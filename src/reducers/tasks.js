@@ -1,7 +1,7 @@
 import { createReducer } from 'redux-create-reducer'
 import Immutable from 'immutable'
 import { combineReducers } from 'redux-immutable'
-import { TASK_ADD, TASK_DONE, TASK_UNDONE, TASK_REMOVE, TASK_EDIT, TASK_FILTER, FILTER_TITLES, FETCH_TASK_LIST } from '../constants'
+import { TASK_ADD, TASK_DONE, TASK_UNDONE, TASK_REMOVE, TASK_EDIT, TASK_FILTER, FILTER_TITLES, FETCH_TASK_LIST } from 'constants'
 
 const { ALL } = FILTER_TITLES
 

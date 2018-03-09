@@ -3,12 +3,12 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import PropTypes from 'prop-types'
 import Head from 'next/head'
-import Nav from '../components/Nav'
-import TaskForm from '../components/TaskForm'
-import TaskList from '../components/TaskList'
-import TaskStats from '../components/TaskStats'
+import Nav from 'components/Nav'
+import TaskForm from 'components/TaskForm'
+import TaskList from 'components/TaskList'
+import TaskStats from 'components/TaskStats'
 import selector from '../selector'
-import { fetchTaskList, taskAdd, taskDone, taskUndone, taskRemove, taskEdit, taskFilter } from '../actions'
+import { fetchTaskList, taskAdd, taskDone, taskUndone, taskRemove, taskEdit, taskFilter } from 'actions'
 
 class App extends Component {
   static propTypes = {

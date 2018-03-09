@@ -2,7 +2,7 @@ import React from 'react'
 import { compose } from 'redux'
 // import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { hocForm, InputItem, hocDebug, stringify } from '../components/Hoc-form'
+import { hocForm, InputItem, hocDebug, stringify } from 'components/Hoc-form'
 
 
 class Demo2 extends React.Component {

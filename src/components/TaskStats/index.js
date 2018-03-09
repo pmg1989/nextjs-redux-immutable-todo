@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import { FILTER_TITLES } from '../../constants'
+import { FILTER_TITLES } from 'constants'
 
 class TaskStats extends Component {
   static propTypes = {
