@@ -5,9 +5,10 @@ import React, { Children } from 'react'
 
 const ActiveLink = ({ router, children, activeClassName, ...props }) => {
   const child = Children.only(children)
-
   let className = child.props.className || ''
-  if (router.pathname === props.href && activeClassName) {
+  if (props.to && props.to === router.pathname && activeClassName) {
+    className = `${className} ${activeClassName}`.trim()
+  } else if (props.route && `/${props.route}` === router.pathname && activeClassName) {
     className = `${className} ${activeClassName}`.trim()
   }
 

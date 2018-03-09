@@ -21,12 +21,12 @@ export default () => (
 
     <ul className="nav-box">
       <li>
-        <Link activeClassName='active' href='/'>
+        <Link activeClassName='active' to='/'>
           <a className='nav-link home-link'>Home</a>
         </Link>
       </li>
       <li>
-        <Link activeClassName='active' href='/list'>
+        <Link activeClassName='active' to='/list'>
           <a className='nav-link'>list</a>
         </Link>
       </li>
