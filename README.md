@@ -15,13 +15,13 @@ Next.js is an awesome and minimalistic framework to make a modern universal reac
 
 ## Getting started
 ```
-git clone https://github.com/CodementorIO/nextjs-redux-starter my-project
-cd my-project
+git clone https://github.com/pmg1989/nextjs-redux-immutable-todo.git
+cd nextjs-redux-immutable-todo
 yarn install
 yarn start
 ```
 
-Then open `http://localhost:3100/` to see your app.
+Then open `http://localhost:3000/` to see your app.
 
 ## Structure overview
 ```
