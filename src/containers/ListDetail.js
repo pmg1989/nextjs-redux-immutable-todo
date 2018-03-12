@@ -7,6 +7,9 @@ const ListDetail = () => {
     <div className="viewport">
       <Head>
         <title>list-detail</title>
+        <link rel='stylesheet' type='text/css' href='/static/css/nprogress.css' />
+        <link rel='stylesheet' type='text/css' href='/static/css/todo.css' />
+        <link rel="stylesheet" href="/_next/static/style.css" />
       </Head>
       <Nav />
       <div className="box">

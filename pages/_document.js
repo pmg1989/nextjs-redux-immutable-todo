@@ -1,6 +1,5 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 import Helmet from 'react-helmet'
-import styles from 'styles/base.scss'
 
 // from https://github.com/zeit/next.js/edit/canary/examples/with-react-helmet/pages/_document.js
 export default class extends Document {
@@ -33,6 +32,8 @@ export default class extends Document {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <meta property='og:title' content={title} />
         <link rel='stylesheet' type='text/css' href='/static/css/nprogress.css' />
+        <link rel='stylesheet' type='text/css' href='/static/css/todo.css' />
+        <link rel="stylesheet" href="/_next/static/style.css" />
       </Helmet>
     )
   }
@@ -45,7 +46,6 @@ export default class extends Document {
           { this.helmetHeadComponents }
         </Head>
         <body {...this.helmetBodyAttrComponents}>
-          <style jsx global>{styles}</style>
           <Main />
           <NextScript />
         </body>

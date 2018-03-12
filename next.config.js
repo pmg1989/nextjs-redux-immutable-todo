@@ -1,11 +1,17 @@
 const { ANALYZE, ASSET_HOST } = process.env
 const path = require('path')
+const withLess = require('@zeit/next-less')
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 
 // for those who using CDN
 const assetPrefix = ASSET_HOST || 'http://localhost:3000'
 
-module.exports = {
+module.exports = withLess({
+  cssModules: true,
+  cssLoaderOptions: {
+    importLoaders: 1,
+    localIdentName: "[local]___[hash:base64:5]",
+  },
   assetPrefix,
   webpack: (config, { dev, isServer }) => {
     config.output.publicPath = `${assetPrefix}${config.output.publicPath}`
@@ -26,20 +32,20 @@ module.exports = {
       }))
     }
 
-    config.module.rules.push({
-      test: /\.scss/,
-      use: [{
-        loader: 'emit-file-loader',
-        options: {
-          name: 'dist/[path][name].[ext]'
-        }
-      },
-        'babel-loader',
-        'styled-jsx-css-loader', {
-          loader: 'sass-loader',
-          options: { sourceMap: dev }
-        }]
-    })
+    // config.module.rules.push({
+    //   test: /\.scss/,
+    //   use: [{
+    //     loader: 'emit-file-loader',
+    //     options: {
+    //       name: 'dist/[path][name].[ext]'
+    //     }
+    //   },
+    //     'babel-loader',
+    //     'styled-jsx-css-loader', {
+    //       loader: 'sass-loader',
+    //       options: { sourceMap: dev }
+    //     }]
+    // })
 
     /* Enable only in Production */
     if (!dev) {
@@ -70,4 +76,4 @@ module.exports = {
 
     return config
   }
-}
+})

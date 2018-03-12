@@ -11,7 +11,7 @@ Router.onRouteChangeError = () => NProgress.done()
 
 export default () => (
   <nav>
-    <style jsx>{`
+    <style>{`
       .nav-box {
         display: flex;
         margin-bottom: 30px;
