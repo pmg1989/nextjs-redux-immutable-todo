@@ -13,6 +13,7 @@ const List = () => {
       <div className="box">
         <span>i am demo list</span>
         <span>i am demo list</span>
+        <div>Loading data from {process.env.BACKEND_URL}</div>
       </div>
       {/* <style jsx>{styles}</style> */}
     </div>

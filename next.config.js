@@ -7,7 +7,7 @@ const assetPrefix = ASSET_HOST || 'http://localhost:3000'
 
 module.exports = {
   assetPrefix,
-  webpack: (config, { dev }) => {
+  webpack: (config, { dev, isServer }) => {
     config.output.publicPath = `${assetPrefix}${config.output.publicPath}`
 
     config.resolve.alias = {
@@ -21,7 +21,7 @@ module.exports = {
       const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
       config.plugins.push(new BundleAnalyzerPlugin({
         analyzerMode: 'server',
-        analyzerPort: 8888,
+        analyzerPort: isServer ? 8888 : 8889,
         openAnalyzer: true
       }))
     }

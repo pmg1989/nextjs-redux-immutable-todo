@@ -10,7 +10,8 @@
   "plugins": [
     ["module-resolver", {
       "root": ["./src"]
-    }]
+    }],
+    ["transform-define", "./env-config.js"]
   ],
   "env": {
     "development": {
