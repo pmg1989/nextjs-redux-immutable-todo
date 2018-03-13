@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import PropTypes from 'prop-types'
-import Head from 'next/head'
+import Head from 'components/Head'
 import Nav from 'components/Nav'
 import TaskForm from 'components/TaskForm'
 import TaskList from 'components/TaskList'
@@ -56,12 +56,7 @@ class App extends Component {
 
     return (
       <div className="viewport">
-        <Head>
-          <title>home</title>
-          <link rel='stylesheet' type='text/css' href='/static/css/nprogress.css' />
-          <link rel='stylesheet' type='text/css' href='/static/css/todo.css' />
-          <link rel="stylesheet" href="/_next/static/style.css" />
-        </Head>
+        <Head title="home" />
         <Nav />
         <TaskForm onSave={onTaskAdd} />
         <TaskList {...taskListProps} />

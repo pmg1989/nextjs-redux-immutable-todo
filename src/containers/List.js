@@ -1,17 +1,12 @@
 import React from 'react'
-import Head from 'next/head'
+import Head from 'components/Head'
 import Nav from 'components/Nav'
 import styles from './List.less'
 
 const List = () => {
   return (
     <div className="viewport">
-      <Head>
-        <title>list</title>
-        <link rel='stylesheet' type='text/css' href='/static/css/nprogress.css' />
-        <link rel='stylesheet' type='text/css' href='/static/css/todo.css' />
-        <link rel="stylesheet" href="/_next/static/style.css" />
-      </Head>
+      <Head title="list" />
       <Nav />
       <div className={styles.box}>
         <span className={styles.title}>i am demo list</span>
