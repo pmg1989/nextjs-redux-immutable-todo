@@ -6,18 +6,17 @@
     "stage-0",
     "stage-1"
   ],
-  "plugins": [
-    ["module-resolver", {
-      "root": ["./src"]
-    }],
-    ["transform-define", "./env-config.js"]
-  ],
   "env": {
     "development": {
-      "plugins": ["inline-dotenv"]
+      "plugins": [
+        ["module-resolver", { "root": ["./src"] }],
+        ["transform-define", "./env-config.js"]
+      ]
     },
     "production": {
       "plugins": [
+        ["module-resolver", { "root": ["./src"] }],
+        ["transform-define", "./env-config.js"],
         "transform-runtime",
         "transform-decorators-legacy",
         "transform-class-properties",

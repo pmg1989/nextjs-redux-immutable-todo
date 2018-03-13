@@ -61,6 +61,7 @@ class App extends Component {
         <TaskForm onSave={onTaskAdd} />
         <TaskList {...taskListProps} />
         <TaskStats {...taskStatsProps} />
+        <div>Loading data from {process.env.BACKEND_URL}</div>
       </div>
     )
   }

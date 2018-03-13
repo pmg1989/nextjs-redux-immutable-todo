@@ -10,6 +10,7 @@ const ListDetail = () => {
       <div className="box">
         i am list detail
       </div>
+      <div>Loading data from {process.env.BACKEND_URL}</div>
     </div>
   )
 }

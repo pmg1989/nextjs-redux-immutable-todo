@@ -5,6 +5,7 @@
   "description": "Next.js redux starter with Express, Redux, less, and Immutable.",
   "scripts": {
     "dev": "nodemon -w server server/index.js",
+    "staging": "NODE_ENV=development nodemon -w server server/index.js",
     "build": "NODE_ENV=production next build",
     "start": "NODE_ENV=production node server/index.js",
     "analyze": "ANALYZE=1 next build",
