@@ -3,7 +3,6 @@
     "env",
     "next/babel",
     "react",
-    "es2015",
     "stage-0",
     "stage-1"
   ],
