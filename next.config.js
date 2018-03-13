@@ -4,7 +4,7 @@ const withLess = require('@zeit/next-less')
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 
 // for those who using CDN
-const assetPrefix = ASSET_HOST || 'http://localhost:3000'
+// const assetPrefix = ASSET_HOST || 'http://localhost:3000'
 
 module.exports = withLess({
   cssModules: true,
@@ -12,9 +12,9 @@ module.exports = withLess({
     importLoaders: 1,
     localIdentName: "[local]___[hash:base64:5]",
   },
-  assetPrefix,
+  // assetPrefix,
   webpack: (config, { dev, isServer }) => {
-    config.output.publicPath = `${assetPrefix}${config.output.publicPath}`
+    // config.output.publicPath = `${assetPrefix}${config.output.publicPath}`
 
     config.resolve.alias = {
       components: path.resolve('./components'),
