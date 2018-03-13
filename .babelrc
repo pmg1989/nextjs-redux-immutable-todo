@@ -18,7 +18,8 @@
       "plugins": ["inline-dotenv"]
     },
     "production": {
-      "plugins": ["transform-runtime",
+      "plugins": [
+        "transform-runtime",
         "transform-decorators-legacy",
         "transform-class-properties",
         "transform-inline-environment-variables"

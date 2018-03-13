@@ -53,17 +53,12 @@ app.prepare().then(() => {
   })
 })
 
-/*
- * NB: make sure to modify this to take into account anything that should trigger
- * an immediate page change (e.g a locale stored in req.session)
- */
 function getCacheKey(req) {
   return `${req.url}`
 }
 
 async function renderAndCache(req, res, pagePath, queryParams) {
   const key = getCacheKey(req)
-
   // If we have a page in the cache, let's serve it
   if (ssrCache.has(key)) {
     res.setHeader('x-cache', 'HIT')
@@ -74,16 +69,13 @@ async function renderAndCache(req, res, pagePath, queryParams) {
   try {
     // If not let's render the page into HTML
     const html = await app.renderToHTML(req, res, pagePath, queryParams)
-
     // Something is wrong with the request, let's skip the cache
     if (res.statusCode !== 200) {
       res.send(html)
       return
     }
-
     // Let's cache this page
     ssrCache.set(key, html)
-
     res.setHeader('x-cache', 'MISS')
     res.send(html)
   } catch (err) {
