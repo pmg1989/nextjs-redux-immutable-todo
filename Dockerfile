@@ -13,7 +13,7 @@ RUN mkdir -p /usr/src/app
  
  # 安装项目依赖包
  RUN npm install yarn --registry=https://registry.npm.taobao.org
- RUN yarn install
+ RUN yarn install --registry=https://registry.npm.taobao.org
  RUN yarn run build
  
  # 配置环境变量
