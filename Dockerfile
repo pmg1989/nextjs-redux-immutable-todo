@@ -1,7 +1,7 @@
 # 指定我们的基础镜像是node，版本是v8.10.0
  FROM node:8.10.0
  # 指定制作我们的镜像的联系人信息（镜像创建者）
- MAINTAINER FELIXPAN
+ MAINTAINER FELIXPAN <972401854@qq.com>
 
  #创建app目录,保存我们的代码
 RUN mkdir -p /usr/src/app
