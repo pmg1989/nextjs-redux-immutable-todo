@@ -3,8 +3,11 @@
  # 指定制作我们的镜像的联系人信息（镜像创建者）
  MAINTAINER FELIXPAN <972401854@qq.com>
 
+ # 修改时区
+ RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
  #创建app目录,保存我们的代码
-RUN mkdir -p /usr/src/app
+ RUN mkdir -p /usr/src/app
  
  # 将根目录下的文件都copy到container（运行此镜像的容器）文件系统的app文件夹下
  ADD . /usr/src/app
