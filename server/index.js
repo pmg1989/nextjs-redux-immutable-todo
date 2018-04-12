@@ -6,7 +6,7 @@ const next = require('next')
 
 const routes = require('../routes')
 
-const port = parseInt(process.env.PORT, 10) || 3000
+const port = parseInt(process.env.PORT, 10) || 3005
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 
@@ -15,49 +15,14 @@ const handler = routes.getRequestHandler(app)
 // This is where we cache our rendered HTML pages
 const ssrCache = new LRUCache({
   max: 100,
-  maxAge: 1000 * 60 * 60 // 1hour
+  maxAge: 1000 * 60 * 60, // 1hour
 })
 
-app.prepare().then(() => {
-  const server = express()
-
-  if (process.env.NODE_ENV === "production") {
-    server.use(compression())
-  }
-
-  // Use the `renderAndCache` utility defined below to serve pages
-  server.get('/', (req, res) => {
-    renderAndCache(req, res, '/')
-  })
-
-  server.get('/list', (req, res) => {
-    renderAndCache(req, res, '/list')
-  })
-
-  server.get('/list/:id', (req, res) => {
-    const queryParams = { id: req.params.id }
-    renderAndCache(req, res, `/list-detail`, queryParams)
-  })
-
-  server.get('*', (req, res) => {
-    if (req.url === '/sw.js') {
-      return app.serveStatic(req, res, path.resolve('./static/sw.js'))
-    } else {
-      return handler(req, res)
-    }
-  })
-
-  server.listen(port, (err) => {
-    if (err) throw err
-    console.log(`> Ready on http://localhost:${port}`)
-  })
-})
-
-function getCacheKey(req) {
+function getCacheKey (req) {
   return `${req.url}`
 }
 
-async function renderAndCache(req, res, pagePath, queryParams) {
+async function renderAndCache (req, res, pagePath, queryParams) {
   const key = getCacheKey(req)
   // If we have a page in the cache, let's serve it
   if (ssrCache.has(key)) {
@@ -82,3 +47,37 @@ async function renderAndCache(req, res, pagePath, queryParams) {
     app.renderError(err, req, res, pagePath, queryParams)
   }
 }
+
+app.prepare().then(() => {
+  const server = express()
+
+  if (process.env.NODE_ENV === 'production') {
+    server.use(compression())
+  }
+
+  // Use the `renderAndCache` utility defined below to serve pages
+  server.get('/', (req, res) => {
+    renderAndCache(req, res, '/')
+  })
+
+  server.get('/list', (req, res) => {
+    renderAndCache(req, res, '/list')
+  })
+
+  server.get('/list/:id', (req, res) => {
+    const queryParams = { id: req.params.id }
+    renderAndCache(req, res, '/list-detail', queryParams)
+  })
+
+  server.get('*', (req, res) => {
+    if (req.url === '/sw.js') {
+      return app.serveStatic(req, res, path.resolve('./static/sw.js'))
+    }
+    return handler(req, res)
+  })
+
+  server.listen(port, (err) => {
+    if (err) throw err
+    console.log(`> Ready on http://localhost:${port}`)
+  })
+})

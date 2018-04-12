@@ -9,9 +9,12 @@
     "build": "NODE_ENV=production next build",
     "start": "NODE_ENV=production node server/index.js",
     "analyze": "ANALYZE=1 next build",
-    "clean": "rimraf node_modules/.cache .next"
+    "clean": "rimraf node_modules/.cache .next",
+    "lint": "eslint --fix --ext .js src server pages",
+    "precommit": "npm run lint"
   },
   "dependencies": {
+    "antd-mobile": "^2.1.6",
     "@zeit/next-less": "^0.1.1",
     "axios": "^0.17.1",
     "classnames": "^2.2.5",
@@ -38,6 +41,7 @@
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
+    "babel-eslint": "^7.2.3",
     "babel-plugin-inline-dotenv": "^1.1.2",
     "babel-plugin-module-resolver": "^3.0.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -49,6 +53,12 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
+    "eslint": "^3.17.1",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.8.0",
+    "husky": "^0.12.0",
     "nodemon": "^1.12.1",
     "rimraf": "^2.6.2",
     "sw-precache-webpack-plugin": "^0.11.4",

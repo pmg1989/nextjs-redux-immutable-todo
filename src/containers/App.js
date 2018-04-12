@@ -7,8 +7,8 @@ import Nav from 'components/Nav'
 import TaskForm from 'components/TaskForm'
 import TaskList from 'components/TaskList'
 import TaskStats from 'components/TaskStats'
-import selector from '../selector'
 import { fetchTaskList, taskAdd, taskDone, taskUndone, taskRemove, taskEdit, taskFilter } from 'actions'
+import selector from '../selector'
 
 class App extends Component {
   static propTypes = {
@@ -25,7 +25,7 @@ class App extends Component {
     onTaskFilter: PropTypes.func.isRequired,
   }
 
-  static async getInitialProps({ store, query }) {
+  static async getInitialProps ({ store }) {
     await store.dispatch(fetchTaskList())
   }
 

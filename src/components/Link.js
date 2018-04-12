@@ -1,7 +1,8 @@
+import React, { Children } from 'react'
+import PropTypes from 'prop-types'
 import { withRouter } from 'next/router'
 // import Link from 'next/link'
 import { Link } from '../../routes'
-import React, { Children } from 'react'
 
 const ActiveLink = ({ router, children, activeClassName, ...props }) => {
   const child = Children.only(children)
@@ -13,6 +14,14 @@ const ActiveLink = ({ router, children, activeClassName, ...props }) => {
   }
 
   return <Link {...props}>{React.cloneElement(child, { className })}</Link>
+}
+
+ActiveLink.propTypes = {
+  router: PropTypes.object.isRequired,
+  children: PropTypes.node.isRequired,
+  activeClassName: PropTypes.string,
+  route: PropTypes.object.isRequired,
+  to: PropTypes.string.isRequired,
 }
 
 export default withRouter(ActiveLink)

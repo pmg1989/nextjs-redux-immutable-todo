@@ -1,0 +1,4 @@
+src/**/*-test.js
+src/public
+src/utils/app.js
+pages/_document.js

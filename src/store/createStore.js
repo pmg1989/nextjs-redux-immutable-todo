@@ -7,9 +7,9 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import config from 'config'
 import rootReducer from '../reducers'
 
-function createMiddlewares ({ isServer }) {
+function createMiddlewares () { // { isServer }
   let middlewares = [
-    thunkMiddleware
+    thunkMiddleware,
   ]
 
   if (config.env === 'development' && typeof window !== 'undefined') {
@@ -37,4 +37,4 @@ export const initStore = (initialState = {}, context) => {
   )
 }
 
-export default (comp) => withRedux(initStore)(comp)
+export default comp => withRedux(initStore)(comp)
