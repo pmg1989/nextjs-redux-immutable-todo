@@ -1,0 +1,23 @@
+@import "../../../themes/mixin.less";
+
+.list_box {
+    margin-bottom: 0.15rem;
+
+    :global {
+        .am-list-extra {
+            font-size: 0.26rem !important;
+        }
+    }
+    
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    .link {
+        color: @xhj-gray;
+        flex-basis: 33.33%;
+        text-align: center;
+        font-size: 0.26rem;
+        padding: 0.1rem 0;
+    }
+}
