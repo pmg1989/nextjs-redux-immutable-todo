@@ -20,8 +20,8 @@ ActiveLink.propTypes = {
   router: PropTypes.object.isRequired,
   children: PropTypes.node.isRequired,
   activeClassName: PropTypes.string,
-  route: PropTypes.object.isRequired,
-  to: PropTypes.string.isRequired,
+  route: PropTypes.string,
+  to: PropTypes.string,
 }
 
 export default withRouter(ActiveLink)
