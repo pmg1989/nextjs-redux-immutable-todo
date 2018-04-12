@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect'
-import { FILTER_TITLES } from 'constants'
+import { FILTER_TITLES } from 'constants/todo-constants'
 
 const taskSelector = state => state.get('list')
 

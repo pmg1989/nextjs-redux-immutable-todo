@@ -1,4 +1,4 @@
 import withReduxStore from 'store/createStore'
-import App from 'containers/App'
+import Todo from 'containers/Todo'
 
-export default withReduxStore(App)
+export default withReduxStore(Todo)
