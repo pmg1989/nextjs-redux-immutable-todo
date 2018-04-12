@@ -4,7 +4,7 @@ const compression = require('compression')
 const LRUCache = require('lru-cache')
 const next = require('next')
 
-const routes = require('../routes')
+const routes = require('../src/routes')
 
 const port = parseInt(process.env.PORT, 10) || 3005
 const dev = process.env.NODE_ENV !== 'production'
