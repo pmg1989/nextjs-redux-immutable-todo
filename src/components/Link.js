@@ -1,8 +1,7 @@
 import React, { Children } from 'react'
 import PropTypes from 'prop-types'
 import { withRouter } from 'next/router'
-// import Link from 'next/link'
-import { Link } from '../../routes'
+import { Link } from '../routes'
 
 const ActiveLink = ({ router, children, activeClassName, ...props }) => {
   const child = Children.only(children)
@@ -20,8 +19,8 @@ ActiveLink.propTypes = {
   router: PropTypes.object.isRequired,
   children: PropTypes.node.isRequired,
   activeClassName: PropTypes.string,
-  route: PropTypes.object.isRequired,
-  to: PropTypes.string.isRequired,
+  route: PropTypes.string,
+  to: PropTypes.string,
 }
 
 export default withRouter(ActiveLink)
