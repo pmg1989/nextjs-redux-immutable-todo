@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 // import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import Container from 'components/Container'
-import Header from 'components/Header'
-import Head from 'components/Head'
+import { Container, Header, Head } from 'components'
 import GridHeader from './GridHeader'
 import ListItem from './ListItem'
 

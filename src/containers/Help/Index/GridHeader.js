@@ -1,7 +1,6 @@
 import React from 'react'
-import Link from 'components/MyLink'
 import { Grid } from 'antd-mobile'
-import Icon from 'components/Icon'
+import { Icon, Link } from 'components'
 import styles from './GridHeader.less'
 
 const GridHeader = () => {

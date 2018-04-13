@@ -1,13 +1,19 @@
 import Container from './Container'
 import Header from './Header'
 import Link from './Link'
-import TabBar from './TabBar'
+import ActiveLink from './ActiveLink'
+// import TabBar from './TabBar'
 import Icon from './Icon'
+import Head from './Head'
+import Nav from './Nav'
 
 export {
   Container,
   Header,
   Link,
-  TabBar,
+  ActiveLink,
+  // TabBar,
   Icon,
+  Head,
+  Nav,
 }

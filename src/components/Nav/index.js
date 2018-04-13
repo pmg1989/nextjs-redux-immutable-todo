@@ -2,7 +2,7 @@ import React from 'react'
 import NProgress from 'nprogress'
 import Router from 'next/router'
 import classnames from 'classnames'
-import Link from '../Link'
+import ActiveLink from '../ActiveLink'
 import styles from './Nav.less'
 
 Router.onRouteChangeStart = (url) => {
@@ -16,19 +16,19 @@ export default () => (
   <nav>
     <ul className={styles['nav-box']}>
       <li>
-        <Link activeClassName={styles.active} to="/">
+        <ActiveLink activeClassName={styles.active} to="/">
           <a className={classnames(styles['nav-link'], styles['home-link'])}>Home</a>
-        </Link>
+        </ActiveLink>
       </li>
       <li>
-        <Link activeClassName={styles.active} to="/list">
+        <ActiveLink activeClassName={styles.active} to="/list">
           <a className={styles['nav-link']}>list</a>
-        </Link>
+        </ActiveLink>
       </li>
       <li>
-        <Link route="list-detail" params={{ id: 1 }} activeClassName={styles.active}>
+        <ActiveLink route="list-detail" params={{ id: 1 }} activeClassName={styles.active}>
           <a className={styles['nav-link']}>list-detail</a>
-        </Link>
+        </ActiveLink>
       </li>
     </ul>
   </nav>

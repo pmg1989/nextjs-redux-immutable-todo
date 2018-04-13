@@ -1,6 +1,5 @@
 import React from 'react'
-import Head from 'components/Head'
-import Nav from 'components/Nav'
+import { Head, Nav } from 'components'
 import styles from './List.less'
 
 const List = () => {

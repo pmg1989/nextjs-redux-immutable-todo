@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 // import { Link, browserHistory } from 'react-router'
-import Link from 'components/MyLink'
+import { Link } from 'components'
 import { Flex, List } from 'antd-mobile'
 import styles from './ListItem.less'
 
