@@ -24,7 +24,7 @@ const Header = ({ children, showTabBar, rightContentType, onApp, ...headerProps 
 
   const navBarProps = {
     leftContent: '',
-    icon: <Icon type="left" />,
+    icon: <Icon type="icon-arrow-left" />,
     mode: 'dark',
     onLeftClick: handleBack,
     rightContent: dicRightContentType[rightContentType] || headerProps.rightContent,
