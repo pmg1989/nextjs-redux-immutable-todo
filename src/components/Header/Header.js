@@ -2,6 +2,7 @@ import React from 'react'
 import { PropTypes } from 'prop-types'
 import { bindActionCreators } from 'redux'
 import classnames from 'classnames'
+import Router from 'next/router'
 import { connect } from 'react-redux'
 import { NavBar, Icon } from 'antd-mobile'
 import appActions from 'actions/app'
@@ -18,7 +19,7 @@ const Header = ({ children, showTabBar, rightContentType, onApp, ...headerProps 
   }
 
   const handleBack = () => {
-    // browserHistory.goBack()
+    Router.back()
   }
 
   const navBarProps = {
