@@ -4,15 +4,15 @@ import { createLogger } from 'redux-logger'
 import withRedux from 'next-redux-wrapper'
 import { createStore, applyMiddleware, compose } from 'redux'
 
-import config from 'config'
+import config from 'utils/config'
 import rootReducer from '../reducers'
 
 function createMiddlewares () { // { isServer }
   let middlewares = [
     thunkMiddleware,
   ]
-
   if (config.env === 'development' && typeof window !== 'undefined') {
+    require('utils/rem')
     middlewares.push(createLogger({
       level: 'info',
       collapsed: true,

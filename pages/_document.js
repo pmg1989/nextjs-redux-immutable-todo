@@ -35,6 +35,30 @@ export default class extends Document {
         <link rel="stylesheet" type="text/css" href="/static/css/nprogress.css" />
         <link rel='stylesheet' type='text/css' href='//unpkg.com/antd-mobile@2.1.8/dist/antd-mobile.min.css' />
         <link rel="stylesheet" href="/_next/static/style.css" />
+        <style jsx="true" global>{`
+          html {
+            font-size: 50px;
+          }
+          body {
+            background-color: #eee !important;
+          }
+
+          ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+          }
+        
+          .am-accordion-header {
+            font-size: 0.28rem !important;
+            font-weight: bold;
+          }
+        
+          .am-grid-item-content {
+            height: auto !important;
+          }
+        `}
+        </style>
       </Helmet>
     )
   }
