@@ -18,9 +18,8 @@ class Todo extends Component {
     onTasksActions: PropTypes.object.isRequired,
   }
 
-  componentDidMount () {
-    const { onTasksActions } = this.props
-    onTasksActions.fetchTaskList()
+  static async getInitialProps ({ store }) {
+    await store.dispatch(tasksActions.fetchTaskList())
   }
 
   render () {
