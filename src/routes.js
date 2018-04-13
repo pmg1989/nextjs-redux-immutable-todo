@@ -12,6 +12,9 @@ const APP_ROUTES = [{
   name: 'list-detail',
   page: 'list-detail',
   pattern: '/list/:id',
+}, {
+  page: 'help/index',
+  pattern: '/help/index',
 }]
 
 APP_ROUTES.forEach(route => routes.add(route))
