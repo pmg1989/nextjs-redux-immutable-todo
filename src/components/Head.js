@@ -7,6 +7,7 @@ const MyHead = ({ children, title }) => {
     <Head>
       <title>{title}</title>
       <link rel="stylesheet" type="text/css" href="/static/css/nprogress.css" />
+      <link rel="stylesheet" type="text/css" href="//unpkg.com/antd-mobile@2.1.8/dist/antd-mobile.min.css" />
       <link rel="stylesheet" type="text/css" href="/static/css/todo.css" />
       <link rel="stylesheet" href="/_next/static/style.css" />
       {children}

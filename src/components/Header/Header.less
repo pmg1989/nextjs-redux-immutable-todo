@@ -1,0 +1,56 @@
+@import "../../themes/mixin.less";
+.fixed-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 998;
+}
+
+:global {
+    .am-navbar {
+        background-color: #000 !important;
+        .am-navbar-left,
+        .am-navbar-right {
+            .am-icon {
+                height: 0.44rem;
+                width: 0.44rem;
+            }
+        }
+    }
+    .am-navbar-title {
+      flex: 0 1 50%;
+    }
+}
+
+.btn_nav {
+    height: 0.44rem;
+    width: 0.44rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transition: height .3s ease-in;
+
+    i {
+        display: block;
+        width: 0.4rem;
+        height: 0.04rem;
+        background-color: #fff;
+        transition: transform .3s ease-in;
+    }
+
+    &.active {
+        height: 0.24rem;
+        i:first-child {
+            transform: rotate(45deg) translateY(200%);
+        }
+
+        i:nth-child(2) {
+            display: none;
+        }
+
+        i:last-child {
+            transform: rotate(-45deg) translateY(-200%);
+        }
+    }
+}
