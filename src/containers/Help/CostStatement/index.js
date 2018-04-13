@@ -12,17 +12,17 @@ import Footer from '../Footer'
 
 class CostStatement extends Component {
   static propTypes = {
-    url: PropTypes.object.isRequired,
+    query: PropTypes.object.isRequired,
   }
 
   state = {
-    activeKey: this.props.url.query.question,
+    activeKey: this.props.query.question,
   }
 
   componentDidMount () {
     setTimeout(() => {
-      const { question } = this.props.url.query
-      question && scrollToAnchor(question)
+      const question = this.props.query.question
+      question && scrollToAnchor(this.props.query.question)
     }, 0)
   }
 
@@ -56,4 +56,9 @@ class CostStatement extends Component {
   }
 }
 
-export default connect()(CostStatement)
+const mapStateToProps = (state, ownProps) => ({
+  query: ownProps.url.query,
+})
+
+export default connect(mapStateToProps)(CostStatement)
+
