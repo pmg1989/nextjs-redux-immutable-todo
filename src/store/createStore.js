@@ -12,7 +12,6 @@ function createMiddlewares () { // { isServer }
     thunkMiddleware,
   ]
   if (config.env === 'development' && typeof window !== 'undefined') {
-    require('utils/rem')
     middlewares.push(createLogger({
       level: 'info',
       collapsed: true,

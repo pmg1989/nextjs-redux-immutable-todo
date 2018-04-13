@@ -73,6 +73,7 @@ export default class extends Document {
         <body {...this.helmetBodyAttrComponents}>
           <Main />
           <script src="/static/js/iconfont.js"></script>
+          <script src="/static/js/rem.js"></script>
           <NextScript />
         </body>
       </html>
