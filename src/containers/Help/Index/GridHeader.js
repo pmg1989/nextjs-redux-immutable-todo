@@ -1,15 +1,15 @@
 import React from 'react'
-import { Link } from 'react-router'
+import Link from 'components/MyLink'
 import { Grid } from 'antd-mobile'
-import { Icon } from 'components'
+import Icon from 'components/Icon'
 import styles from './GridHeader.less'
 
 const GridHeader = () => {
   const data = [
-    { icon: require('svg/help/howtouse.svg'), text: '租机流程' },
-    { icon: require('svg/help/howtoorder.svg'), text: '下单流程' },
-    { icon: require('svg/help/howtomaintain.svg'), text: '维修流程' },
-    { icon: require('svg/help/complaintadvice.svg'), text: '投诉建议' },
+    { icon: 'icon-icon-sousuo', text: '租机流程' },
+    { icon: 'icon-icon-zhifuqianbao', text: '下单流程' },
+    { icon: 'icon-icon-shouhouweixiu', text: '维修流程' },
+    { icon: 'icon-service-kefu-slim', text: '投诉建议' },
   ]
 
   const links = [
