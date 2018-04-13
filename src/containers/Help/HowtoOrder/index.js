@@ -1,7 +1,7 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Container, Header, TabBar  } from 'components'
+import { Container, Header, TabBar } from 'components'
 import Content from './Content'
 
 const HowtoOrder = () => {
