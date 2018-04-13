@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 // import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Container, Header, Head } from 'components'
+import { Container, Header, Head, TabBar } from 'components'
 import GridHeader from './GridHeader'
 import ListItem from './ListItem'
 
@@ -19,6 +19,7 @@ class Help extends Component {
 
     const containerProps = {
       renderHeader: <Header {...headerProps}>帮助中心</Header>,
+      renderTabBar: <TabBar selectedTab="" hidden />,
     }
 
     return (

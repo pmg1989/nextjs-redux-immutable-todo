@@ -2,13 +2,15 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import Immutable from 'immutable'
-import { browserHistory } from 'react-router'
+// import { browserHistory } from 'react-router'
 import { bindActionCreators } from 'redux'
 import { TabBar } from 'antd-mobile'
 import { Icon } from 'components'
-import connect from 'components/connect'
-import { appActions } from 'actions/app'
+import { connect } from 'react-redux'
+import appActions from 'actions/app'
 import styles from './TabBar.less'
+
+const Item = TabBar.Item
 
 const dicType = {
   home: '/',
@@ -36,7 +38,8 @@ class MyTabBar extends Component {
 
   handlePress = type => () => {
     // this.props.onApp.changeTabBar(type)
-    browserHistory.push(dicType[type])
+    // browserHistory.push(dicType[type])
+    console.log(dicType[type])
   }
 
   render () {
@@ -52,25 +55,25 @@ class MyTabBar extends Component {
           barTintColor="white"
           hidden={!show}
         >
-          <TabBar.Item
-            icon={<Icon type={require('svg/tab-bar/home.svg')} />}
-            selectedIcon={<Icon type={require('svg/tab-bar/home-active.svg')} />}
+          <Item
+            icon={<Icon type="icon-index" />}
+            selectedIcon={<Icon type="icon-index-active" />}
             title="首页"
             key="home"
             selected={selectedTab === 'home'}
             onPress={this.handlePress('home')}
           />
-          <TabBar.Item
-            icon={<Icon type={require('svg/tab-bar/product.svg')} />}
-            selectedIcon={<Icon type={require('svg/tab-bar/product-active.svg')} />}
+          <Item
+            icon={<Icon type="icon-category" />}
+            selectedIcon={<Icon type="icon-category-index" />}
             title="商品"
             key="product"
             selected={selectedTab === 'product'}
             onPress={this.handlePress('product')}
           />
-          <TabBar.Item
-            icon={<Icon type={require('svg/tab-bar/myCenter.svg')} />}
-            selectedIcon={<Icon type={require('svg/tab-bar/myCenter-active.svg')} />}
+          <Item
+            icon={<Icon type="icon-people" />}
+            selectedIcon={<Icon type="icon-people-active" />}
             title="我的"
             key="myCenter"
             selected={selectedTab === 'myCenter'}
@@ -90,4 +93,4 @@ const mapDispatchToProps = dispatch => ({
   onApp: bindActionCreators(appActions, dispatch),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(module)(MyTabBar)
+export default connect(mapStateToProps, mapDispatchToProps)(MyTabBar)
