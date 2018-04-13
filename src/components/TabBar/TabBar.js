@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import Immutable from 'immutable'
-// import { browserHistory } from 'react-router'
+import Router from 'next/router'
 import { bindActionCreators } from 'redux'
 import { TabBar } from 'antd-mobile'
 import { Icon } from 'components'
@@ -38,8 +38,7 @@ class MyTabBar extends Component {
 
   handlePress = type => () => {
     // this.props.onApp.changeTabBar(type)
-    // browserHistory.push(dicType[type])
-    console.log(dicType[type])
+    Router.push(dicType[type])
   }
 
   render () {

@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-// import { Link, browserHistory } from 'react-router'
+import Router from 'next/router'
 import { Link } from 'components'
 import { Flex, List } from 'antd-mobile'
 import styles from './ListItem.less'
@@ -8,8 +8,7 @@ const Item = List.Item
 
 const ListItem = () => {
   const handleLinkClick = (linkTo) => {
-    console.log(linkTo)
-    // browserHistory.push(`/help/${linkTo}`)
+    Router.push(`/help/${linkTo}`)
   }
 
   return (

@@ -1,12 +1,11 @@
 import React from 'react'
 import { PropTypes } from 'prop-types'
-// import { browserHistory } from 'react-router'
 import { bindActionCreators } from 'redux'
 import classnames from 'classnames'
 import { connect } from 'react-redux'
 import { NavBar, Icon } from 'antd-mobile'
-// import { Helmet } from 'react-helmet'
 import appActions from 'actions/app'
+import { Head } from 'components'
 import styles from './Header.less'
 
 const Header = ({ children, showTabBar, rightContentType, onApp, ...headerProps }) => {
@@ -33,7 +32,7 @@ const Header = ({ children, showTabBar, rightContentType, onApp, ...headerProps 
 
   return (
     <div className={styles['fixed-top']}>
-      {/* <Helmet><title>{children}</title></Helmet> */}
+      <Head title={children} />
       <NavBar {...navBarProps}>
         {children.length > 12 ? `${children.substr(0, 12)}...` : children}
       </NavBar>

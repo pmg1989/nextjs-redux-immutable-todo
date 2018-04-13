@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 // import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Container, Header, Head, TabBar } from 'components'
+import { Container, Header, TabBar } from 'components'
 import GridHeader from './GridHeader'
 import ListItem from './ListItem'
 
@@ -24,7 +24,6 @@ class Help extends Component {
 
     return (
       <Container {...containerProps}>
-        <Head title="帮助中心" />
         <GridHeader />
         <ListItem />
       </Container>
