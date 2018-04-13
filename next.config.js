@@ -23,7 +23,6 @@ module.exports = withLess({
       actions: path.resolve('./actions'),
       services: path.resolve('./services'),
       svg: path.resolve('./svg'),
-      images: path.resolve('./public/images'),
       themes: path.resolve('./themes'),
     }
 
@@ -64,5 +63,5 @@ module.exports = withLess({
     }
 
     return config
-  }
+  },
 })
