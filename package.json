@@ -14,8 +14,8 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "antd-mobile": "^2.1.6",
     "@zeit/next-less": "^0.1.1",
+    "antd-mobile": "^2.1.6",
     "axios": "^0.17.1",
     "classnames": "^2.2.5",
     "compression": "^1.7.1",
@@ -42,6 +42,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
+    "babel-plugin-import": "^1.7.0",
     "babel-plugin-inline-dotenv": "^1.1.2",
     "babel-plugin-module-resolver": "^3.0.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
