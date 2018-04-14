@@ -1,9 +1,10 @@
-const NODE_ENV = process.env.NODE_ENV
+const REACT_APP_API_ENV = process.env.REACT_APP_API_ENV
 
 module.exports = {
+  'process.env.REACT_APP_API_ENV': REACT_APP_API_ENV,
   'process.env.BACKEND_URL': {
-    'development': 'https://localhost:8080',
-    'staging': 'https://staging.example.com',
-    'production': 'https://api.example.com'
-  }[NODE_ENV]
+    dev: 'https://dev.api.com',
+    staging: 'https://staging.api.com',
+    prod: 'https://prod.api.com',
+  }[REACT_APP_API_ENV],
 }
