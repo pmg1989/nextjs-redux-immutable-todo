@@ -32,7 +32,7 @@ const MyHead = ({ children, title }) => {
             height: auto !important;
           }
         `}
-        </style>
+      </style>
     </Head>
   )
 }
