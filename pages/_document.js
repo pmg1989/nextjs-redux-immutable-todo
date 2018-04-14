@@ -36,9 +36,6 @@ export default class extends Document {
         <link rel='stylesheet' type='text/css' href='//unpkg.com/antd-mobile@2.1.8/dist/antd-mobile.min.css' />
         <link rel="stylesheet" href="/_next/static/style.css" />
         <style jsx="true" global>{`
-          html {
-            font-size: 50px;
-          }
           body {
             background-color: #eee !important;
           }
