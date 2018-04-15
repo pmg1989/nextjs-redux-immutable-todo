@@ -12,7 +12,7 @@ const MyHead = ({ children, title }) => {
       <link rel="stylesheet" type="text/css" href="/static/css/todo.css" />
       <link rel="stylesheet" href="/_next/static/style.css" />
       {children}
-      <style jsx="true" global>{`
+      <style jsx global>{`
           body {
             background-color: #eee !important;
           }
