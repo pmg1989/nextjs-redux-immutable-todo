@@ -1,14 +1,13 @@
-const { ANALYZE, ASSET_HOST } = process.env
+const { ANALYZE } = process.env
 const path = require('path')
 const withLess = require('@zeit/next-less')
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
+const { assetPrefix } = require('./src/utils/config')
+
 
 function moduleDir (m) {
   return path.dirname(require.resolve(`${m}/package.json`))
 }
-
-// for those who using CDN
-// const assetPrefix = ASSET_HOST || 'http://localhost:3000'
 
 module.exports = withLess({
   cssModules: true,
@@ -16,9 +15,9 @@ module.exports = withLess({
     importLoaders: 1,
     localIdentName: '[local]___[hash:base64:5]',
   },
-  // assetPrefix,
+  assetPrefix,
   webpack: (config, { dev, isServer }) => {
-    // config.output.publicPath = `${assetPrefix}${config.output.publicPath}`
+    config.output.publicPath = `${assetPrefix}${config.output.publicPath}`
 
     config.resolve.alias = {
       components: path.resolve('./components'),
