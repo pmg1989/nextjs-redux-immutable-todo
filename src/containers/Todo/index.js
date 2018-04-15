@@ -44,7 +44,7 @@ class Todo extends Component {
     const headerProps = {
       rightContentType: 'tabBar',
     }
-  
+
     const containerProps = {
       renderHeader: <Header {...headerProps}>首页</Header>,
       renderTabBar: <TabBar selectedTab="" hidden />,
