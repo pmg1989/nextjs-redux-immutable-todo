@@ -6,7 +6,9 @@
     "stage-1"
   ],
   "plugins": [
+    [ "styled-jsx/babel" ],
     ["transform-define", "./env-config.js"],
-    ["module-resolver", { "root": ["./src"] }]
+    ["module-resolver", { "root": ["./src"] }],
+    ["import", { "libraryName": "antd-mobile" }]
   ]
 }

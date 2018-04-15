@@ -12,6 +12,27 @@ const MyHead = ({ children, title }) => {
       <link rel="stylesheet" type="text/css" href="/static/css/todo.css" />
       <link rel="stylesheet" href="/_next/static/style.css" />
       {children}
+      <style jsx global>{`
+          body {
+            background-color: #eee !important;
+          }
+
+          ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+          }
+        
+          .am-accordion-header {
+            font-size: 0.28rem !important;
+            font-weight: bold;
+          }
+        
+          .am-grid-item-content {
+            height: auto !important;
+          }
+        `}
+      </style>
     </Head>
   )
 }

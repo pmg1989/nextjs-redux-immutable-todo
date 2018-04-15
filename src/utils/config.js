@@ -12,4 +12,10 @@ module.exports = {
     staging: 'https://staging.proxy.com',
     prod: 'https://prod.proxy.com',
   }[REACT_APP_API_ENV],
+
+  assetPrefix: {
+    dev: '',
+    staging: 'http://test5.mmstatic.airent.test.aiershou.com/reac',
+    prod: 'http://test5.mmstatic.airent.test.aiershou.com/reac',
+  }[REACT_APP_API_ENV],
 }
