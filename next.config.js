@@ -3,6 +3,10 @@ const path = require('path')
 const withLess = require('@zeit/next-less')
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 
+function moduleDir (m) {
+  return path.dirname(require.resolve(`${m}/package.json`))
+}
+
 // for those who using CDN
 // const assetPrefix = ASSET_HOST || 'http://localhost:3000'
 
@@ -25,6 +29,30 @@ module.exports = withLess({
       svg: path.resolve('./svg'),
       themes: path.resolve('./themes'),
     }
+
+    config.resolve.extensions = ['.web.js', '.js', '.json']
+
+    config.module.rules.push(
+      {
+        test: /\.(svg)$/i,
+        loader: 'emit-file-loader',
+        options: {
+          name: 'dist/[path][name].[ext]',
+        },
+        include: [
+          moduleDir('antd-mobile'),
+          __dirname,
+        ],
+      },
+      {
+        test: /\.(svg)$/i,
+        loader: 'svg-sprite-loader',
+        include: [
+          moduleDir('antd-mobile'),
+          __dirname,
+        ],
+      }
+    )
 
     if (ANALYZE) {
       const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
