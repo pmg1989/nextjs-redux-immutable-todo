@@ -1,27 +1,14 @@
 {
   "presets": [
-    "env",
     "next/babel",
     "react",
     "stage-0",
     "stage-1"
   ],
-  "env": {
-    "development": {
-      "plugins": [
-        ["module-resolver", { "root": ["./src"] }],
-        ["transform-define", "./env-config.js"]
-      ]
-    },
-    "production": {
-      "plugins": [
-        ["module-resolver", { "root": ["./src"] }],
-        ["transform-define", "./env-config.js"],
-        "transform-runtime",
-        "transform-decorators-legacy",
-        "transform-class-properties",
-        "transform-inline-environment-variables"
-      ]
-    }
-  }
+  "plugins": [
+    [ "styled-jsx/babel" ],
+    ["transform-define", "./env-config.js"],
+    ["module-resolver", { "root": ["./src"] }],
+    ["import", { "libraryName": "antd-mobile" }]
+  ]
 }

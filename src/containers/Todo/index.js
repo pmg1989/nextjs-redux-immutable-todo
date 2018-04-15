@@ -3,8 +3,7 @@ import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import tasksActions from 'actions/todo'
-import Head from 'components/Head'
-import Nav from 'components/Nav'
+import { Head, Nav } from 'components'
 import TaskForm from './TaskForm'
 import TaskList from './TaskList'
 import TaskStats from './TaskStats'
@@ -19,9 +18,8 @@ class Todo extends Component {
     onTasksActions: PropTypes.object.isRequired,
   }
 
-  componentDidMount () {
-    const { onTasksActions } = this.props
-    onTasksActions.fetchTaskList()
+  static async getInitialProps ({ store }) {
+    await store.dispatch(tasksActions.fetchTaskList())
   }
 
   render () {

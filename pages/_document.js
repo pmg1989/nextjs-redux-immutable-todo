@@ -26,14 +26,10 @@ export default class extends Document {
   }
 
   get helmetJsx () {
-    const title = 'Hello next.js Real World!'
+    const title = '享换机信用租机'
     return (
       <Helmet>
         <title>{title}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content={title} />
-        <link rel="stylesheet" type="text/css" href="/static/css/nprogress.css" />
-        <link rel="stylesheet" href="/_next/static/style.css" />
       </Helmet>
     )
   }
@@ -47,6 +43,8 @@ export default class extends Document {
         </Head>
         <body {...this.helmetBodyAttrComponents}>
           <Main />
+          <script src="/static/js/iconfont.js"></script>
+          <script src="/static/js/rem.js"></script>
           <NextScript />
         </body>
       </html>
