@@ -1,6 +1,7 @@
 import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
 import Helmet from 'react-helmet'
+import { assetPrefix } from 'utils/config'
 
 // from https://github.com/zeit/next.js/edit/canary/examples/with-react-helmet/pages/_document.js
 export default class extends Document {
@@ -43,8 +44,8 @@ export default class extends Document {
         </Head>
         <body {...this.helmetBodyAttrComponents}>
           <Main />
-          <script src="/static/js/iconfont.js"></script>
-          <script src="/static/js/rem.js"></script>
+          <script src={`${assetPrefix}/static/js/iconfont.js?v=1`}></script>
+          <script src={`${assetPrefix}/static/js/rem.js`}></script>
           <NextScript />
         </body>
       </html>
