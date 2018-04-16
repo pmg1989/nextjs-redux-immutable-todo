@@ -36,7 +36,7 @@ export default class extends Document {
 
   render () {
     return (
-      <html lang="en" {...this.helmetHtmlAttrComponents}>
+      <html lang="en" {...this.helmetHtmlAttrComponents} style={{ fontSize: '50px' }}>
         <Head>
           { this.helmetJsx }
           { this.helmetHeadComponents }
