@@ -15,6 +15,7 @@ module.exports = withLess({
     localIdentName: '[local]___[hash:base64:5]',
   },
   assetPrefix,
+  distDir: 'build',
   webpack: (config, { dev, isServer }) => {
     config.output.publicPath = `${assetPrefix}${config.output.publicPath}`
 
