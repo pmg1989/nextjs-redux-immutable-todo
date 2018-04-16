@@ -22,7 +22,7 @@ const List = () => {
     <Container {...containerProps}>
       <Nav />
       <div className={styles.box}>
-        <Link href={{ pathname: 'list-detail', query: { id: '2' } }}>list detail id 2</Link>
+        <Link href={{ pathname: 'list-detail', query: { id: '2' } }}><a>list detail id 2</a></Link> <br />
         STATIC_HOST: { STATIC_HOST } <br />
         PROXY_HOST : { PROXY_HOST } <br />
         process.env.REACT_APP_API_ENV: { process.env.REACT_APP_API_ENV } <br />
