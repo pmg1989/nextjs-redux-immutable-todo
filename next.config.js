@@ -4,7 +4,6 @@ const withLess = require('@zeit/next-less')
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 const { assetPrefix } = require('./src/utils/config')
 
-
 function moduleDir (m) {
   return path.dirname(require.resolve(`${m}/package.json`))
 }
@@ -29,6 +28,7 @@ module.exports = withLess({
       themes: path.resolve('./themes'),
     }
 
+    // fix with babel-plugin-import start
     config.resolve.extensions = ['.web.js', '.js', '.json']
 
     config.module.rules.push(
@@ -52,6 +52,7 @@ module.exports = withLess({
         ],
       }
     )
+    // fix with babel-plugin-import end
 
     if (ANALYZE) {
       const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')

@@ -39,9 +39,11 @@ async function renderAndCache (req, res, pagePath, queryParams) {
       res.send(html)
       return
     }
-    // Let's cache this page
-    ssrCache.set(key, html)
-    res.setHeader('x-cache', 'MISS')
+    // Let's cache this page with production
+    if (!dev) {
+      ssrCache.set(key, html)
+      res.setHeader('x-cache', 'MISS')
+    }
     res.send(html)
   } catch (err) {
     app.renderError(err, req, res, pagePath, queryParams)

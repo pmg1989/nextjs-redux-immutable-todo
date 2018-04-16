@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import tasksActions from 'actions/todo'
-import { Head, Nav } from 'components'
+import { Container, Header, TabBar, Nav } from 'components'
 import TaskForm from './TaskForm'
 import TaskList from './TaskList'
 import TaskStats from './TaskStats'
@@ -41,16 +41,24 @@ class Todo extends Component {
       onTaskFilter: taskFilter,
     }
 
+    const headerProps = {
+      rightContentType: 'tabBar',
+    }
+
+    const containerProps = {
+      renderHeader: <Header {...headerProps}>首页</Header>,
+      renderTabBar: <TabBar selectedTab="" hidden />,
+    }
+
     return (
-      <div className="viewport content-box">
-        <Head title="home" />
-        <Nav />
-        <div className="content">
+      <Container {...containerProps}>
+        <div className="viewport">
+          <Nav />
           <TaskForm onSave={taskAdd} />
           <TaskList {...taskListProps} />
           <TaskStats {...taskStatsProps} />
         </div>
-      </div>
+      </Container>
     )
   }
 }
