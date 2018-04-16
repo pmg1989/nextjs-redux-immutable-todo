@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
-import { Container, Header, TabBar } from 'components'
+import { Container, Header, TabBar, Icon } from 'components'
 import styles from './Error.less'
 
 const statusDic = {
@@ -27,6 +27,7 @@ export default class Error extends Component {
     const { statusCode } = this.props
 
     const headerProps = {
+      icon: <a href="tel:400-670-0188"><Icon type="icon-tel" /></a>,
       rightContentType: 'tabBar',
     }
 
