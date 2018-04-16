@@ -1,17 +1,16 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
 const AccordionList = ({ children, activeKey, onAccordionChange }) => {
   return (
-    // Fragment
-    <div>
+    <Fragment>
       {React.Children.map(children, (child) => {
         return React.cloneElement(child, {
           activeKey,
           onAccordionChange,
         })
       })}
-    </div>
+    </Fragment>
   )
 }
 
