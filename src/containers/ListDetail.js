@@ -2,7 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Container, Header, TabBar, Nav } from 'components'
 
+let dic = {}
+
 const ListDetail = ({ query }) => {
+  if (!dic[query.id]) {
+    dic[query.id] = 1
+  } else {
+    dic[query.id] += 1
+  }
+  console.log(dic)
+
   const headerProps = {
     rightContentType: 'tabBar',
   }
