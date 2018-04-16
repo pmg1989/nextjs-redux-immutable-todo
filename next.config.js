@@ -3,6 +3,7 @@ const path = require('path')
 const withLess = require('@zeit/next-less')
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 const { assetPrefix } = require('./src/utils/config')
+// const { version } = require('./package.json')
 
 function moduleDir (m) {
   return path.dirname(require.resolve(`${m}/package.json`))
@@ -15,6 +16,18 @@ module.exports = withLess({
     localIdentName: '[local]___[hash:base64:5]',
   },
   assetPrefix,
+  distDir: 'build',
+  // generateBuildId: async () => {
+  //   // you can get the latest git commit hash here
+  //   console.log(version)
+  //   return version
+  // },
+  // serverRuntimeConfig: {
+  //   mySecret: 'secret', // Will only be available on the server side
+  // },
+  // publicRuntimeConfig: {
+  //   staticFolder: '/static', // Will be available on both server and client
+  // },
   webpack: (config, { dev, isServer }) => {
     config.output.publicPath = `${assetPrefix}${config.output.publicPath}`
 

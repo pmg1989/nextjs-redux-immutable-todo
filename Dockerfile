@@ -17,7 +17,7 @@
  # 安装项目依赖包
  RUN npm install yarn --registry=https://registry.npm.taobao.org
  RUN yarn install --registry=https://registry.npm.taobao.org
- RUN yarn run build
+ RUN yarn run build:dev
  
  # 配置环境变量
  ENV HOST 0.0.0.0
@@ -27,4 +27,4 @@
  EXPOSE 3000
  
  # 容器启动时执行的命令，类似npm run start
- CMD ["yarn","start"]
+ CMD ["yarn","start:dev"]
