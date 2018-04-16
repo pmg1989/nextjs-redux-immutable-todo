@@ -49,7 +49,6 @@ export default class extends Document {
           <NextScript />
           <script async src={`${assetPrefix}/static/js/iconfont.js?v=1`}></script>
           <script async src={`${assetPrefix}/static/js/rem.js`}></script>
-          
           <script async type="text/javascript" src="//u.nuomi.com/skeleton.js?appId=10198"></script>
           <script
             dangerouslySetInnerHTML={{
