@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Router from 'next/router'
 import { Link } from 'components'
 import { Flex, List } from 'antd-mobile'
@@ -12,8 +12,7 @@ const ListItem = () => {
   }
 
   return (
-    // Fragment
-    <div>
+    <Fragment>
       <List renderHeader={() => '点击以下关键词，快速查找问题'} className={styles.list_box}>
         <Item extra="更多" arrow="horizontal" onClick={() => handleLinkClick('coststatement')}>费用说明</Item>
         <Item>
@@ -64,7 +63,7 @@ const ListItem = () => {
           </Flex>
         </Item>
       </List>
-    </div>
+    </Fragment>
   )
 }
 

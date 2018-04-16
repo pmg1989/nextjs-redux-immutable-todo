@@ -1,0 +1,37 @@
+.box {
+    height: e("calc(100vh - 45px)");
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+  
+    .icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .btn_box {
+        display: flex;
+        width: 4.9rem;
+        justify-content: space-between;
+        padding-top: 0.2rem;
+
+        .btn {
+            color: #fe5649;
+            border: 1px solid currentColor;
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.1rem;
+        }
+    }
+  }
+
+  :global {
+      #icon-tel {
+          path {
+              fill: #fff;
+          }
+      }
+  }
+  
