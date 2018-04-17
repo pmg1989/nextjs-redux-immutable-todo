@@ -4,13 +4,11 @@
     "script": "./server/index.js",
     "max_memory_restart": "500M",
     "watch": [
-      "src",
-      "pages"
+      "build"
     ],
     "ignore_watch": [
       "node_modules", 
       "logs",
-      "build",
       "static"
     ],
     "watch_options": {
