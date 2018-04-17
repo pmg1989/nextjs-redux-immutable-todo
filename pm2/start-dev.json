@@ -1,0 +1,26 @@
+{
+  "name": "mobile-dev",
+  "cwd": "./",
+  "script": "./server/index.js",
+  "max_memory_restart": "500M",
+  "watch": [
+    "build"
+  ],
+  "ignore_watch": [
+    "node_modules", 
+    "logs",
+    "static"
+  ],
+  "watch_options": {
+    "followSymlinks": false
+  },
+  "exec_mode": "cluster",
+  "log_file": "./logs/dev/combined.outerr.log",
+  "error_file": "./logs/dev/app-err.log",
+  "out_file": "./logs/dev/app-out.log",
+  "log_date_format": "YYYY-MM-DD HH:mm:ss",
+  "env": {
+      "NODE_ENV": "production",
+      "REACT_APP_API_ENV": "dev"
+  }
+}
