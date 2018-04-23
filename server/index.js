@@ -2,17 +2,16 @@ const express = require('express')
 const path = require('path')
 const compression = require('compression')
 const next = require('next')
-const todosRoutes = require('./api/todos')
 
 const port = parseInt(process.env.PORT, 10) || 3005
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 
 const routes = require('../src/routes')
+const todosRoutes = require('./api/todos')
 
 const handler = routes.getRequestHandler(app)
-
-const renderAndCache = require('./cache')(app, dev)
+const renderCache = require('./renderCache')(app, dev)
 
 app.prepare().then(() => {
   const server = express()
@@ -21,18 +20,7 @@ app.prepare().then(() => {
     server.use(compression())
   }
 
-  server.get('/', (req, res) => {
-    renderAndCache(req, res, '/')
-  })
-
-  server.get('/list', (req, res) => {
-    renderAndCache(req, res, '/list')
-  })
-
-  server.get('/list/:id', (req, res) => {
-    const queryParams = { id: req.params.id }
-    renderAndCache(req, res, '/list-detail', queryParams)
-  })
+  server.use('/', renderCache)
 
   server.use('/api', todosRoutes)
 
