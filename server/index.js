@@ -3,6 +3,7 @@ const path = require('path')
 const compression = require('compression')
 const LRUCache = require('lru-cache')
 const next = require('next')
+const axios = require('axios')
 
 const routes = require('../src/routes')
 
@@ -60,6 +61,13 @@ app.prepare().then(() => {
   // Use the `renderAndCache` utility defined below to serve pages
   server.get('/', (req, res) => {
     renderAndCache(req, res, '/')
+  })
+
+  server.get('/getTodos', async (req, res) => {
+    const { data } = await axios.get('https://api.myjson.com/bins/aapid')
+    res.send({
+      list: data,
+    })
   })
 
   server.get('/list', (req, res) => {
