@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-fetch'
+import axios from 'axios'
 import Immutable from 'immutable'
 import { todoConstants } from 'constants'
 
@@ -20,16 +20,17 @@ const receiveTaskList = list => ({
 })
 
 // export const fetchTaskList = () => (
-//     dispatch => (
-//       fetch('https://api.myjson.com/bins/aapid')
-//       .then(res => res.json())
-//       .then(list => dispatch(receiveTaskList(list)))
-//     )
+//   async (dispatch) => {
+//     const { data } = await axios.get('https://api.myjson.com/bins/aapid')
+//     dispatch(receiveTaskList(data.list))
+//   }
 // )
 
 export const fetchTaskList = () => (
   async (dispatch) => {
-    const list = await fetch('https://api.myjson.com/bins/aapid').then(res => res.json())
-    dispatch(receiveTaskList(list))
+    const { data } = await axios.get('http://localhost:3005/api/todos')
+    const res = await axios.get('http://localhost:3005/api/products')
+    console.log(res.data)
+    dispatch(receiveTaskList(data.list))
   }
 )
