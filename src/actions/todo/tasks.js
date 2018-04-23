@@ -28,7 +28,7 @@ const receiveTaskList = list => ({
 
 export const fetchTaskList = () => (
   async (dispatch) => {
-    const { data } = await axios.get('http://localhost:3005/getTodos')
+    const { data } = await axios.get('http://localhost:3005/api/todos')
     dispatch(receiveTaskList(data.list))
   }
 )

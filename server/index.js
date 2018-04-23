@@ -3,7 +3,7 @@ const path = require('path')
 const compression = require('compression')
 const LRUCache = require('lru-cache')
 const next = require('next')
-const axios = require('axios')
+const todosRoutes = require('./api/todos')
 
 const routes = require('../src/routes')
 
@@ -63,13 +63,6 @@ app.prepare().then(() => {
     renderAndCache(req, res, '/')
   })
 
-  server.get('/getTodos', async (req, res) => {
-    const { data } = await axios.get('https://api.myjson.com/bins/aapid')
-    res.send({
-      list: data,
-    })
-  })
-
   server.get('/list', (req, res) => {
     renderAndCache(req, res, '/list')
   })
@@ -78,6 +71,8 @@ app.prepare().then(() => {
     const queryParams = { id: req.params.id }
     renderAndCache(req, res, '/list-detail', queryParams)
   })
+
+  server.use('/api', todosRoutes)
 
   server.get('*', (req, res) => {
     if (req.url === '/sw.js') {
