@@ -29,6 +29,8 @@ const receiveTaskList = list => ({
 export const fetchTaskList = () => (
   async (dispatch) => {
     const { data } = await axios.get('http://localhost:3005/api/todos')
+    const res = await axios.get('http://localhost:3005/api/products')
+    console.log(res.data)
     dispatch(receiveTaskList(data.list))
   }
 )

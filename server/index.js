@@ -8,7 +8,7 @@ const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 
 const routes = require('../src/routes')
-const todosRoutes = require('./api/todos')
+const apiRoutes = require('./api/index')()
 
 const handler = routes.getRequestHandler(app)
 const renderCache = require('./renderCache')(app, dev)
@@ -22,7 +22,7 @@ app.prepare().then(() => {
 
   server.use('/', renderCache)
 
-  server.use('/api', todosRoutes)
+  server.use('/api', apiRoutes)
 
   server.get('*', (req, res) => {
     if (req.url === '/sw.js') {
