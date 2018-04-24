@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { Container, Header, TabBar, Nav } from 'components'
-import { assetPrefix, PROXY_HOST } from 'utils/config'
+import { assetPrefix } from 'utils/config'
 import styles from './List.less'
 
 let listCount = 0
@@ -24,9 +24,7 @@ const List = () => {
       <div className={styles.box}>
         <Link href={{ pathname: 'list-detail', query: { id: '2' } }}><a>list detail id 2</a></Link> <br />
         STATIC_HOST: { assetPrefix } <br />
-        PROXY_HOST : { PROXY_HOST } <br />
         process.env.REACT_APP_API_ENV: { process.env.REACT_APP_API_ENV } <br />
-        process.env.BACKEND_URL: { process.env.BACKEND_URL } <br />
       </div>
     </Container>
   )
