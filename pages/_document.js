@@ -40,6 +40,7 @@ export default class extends Document {
       <html lang="en" {...this.helmetHtmlAttrComponents} style={{ fontSize: '50px' }}>
         <Head>
          <link rel="icon" href="//mstaticc.xianghuanji.com/favicon.ico" type="image/x-icon" />
+         <script async src={`${assetPrefix}/static/js/rem.js`}></script>
          <script async type="text/javascript" src={`${assetPrefix}/static/js/fastclick.min.js`}></script>
           { this.helmetJsx }
           { this.helmetHeadComponents }
@@ -48,7 +49,6 @@ export default class extends Document {
           <Main />
           <NextScript />
           <script async src={`${assetPrefix}/static/js/iconfont.js?v=1`}></script>
-          <script async src={`${assetPrefix}/static/js/rem.js`}></script>
           <script async type="text/javascript" src="//u.nuomi.com/skeleton.js?appId=10198"></script>
           <script
             dangerouslySetInnerHTML={{

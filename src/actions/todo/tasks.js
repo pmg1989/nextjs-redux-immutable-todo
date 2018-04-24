@@ -1,6 +1,6 @@
-import axios from 'axios'
 import Immutable from 'immutable'
 import { todoConstants } from 'constants'
+import axios from 'utils/axiosClient'
 
 export const taskAdd = name => ({ name, type: todoConstants.TASK_ADD })
 

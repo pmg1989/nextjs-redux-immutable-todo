@@ -1,10 +1,10 @@
 const express = require('express')
-const axios = require('axios')
+const axios = require('../utils/axiosServer')
 
 const router = express.Router()
 
 router.get('/', async (req, res) => {
-  const { data } = await axios.get('https://api.myjson.com/bins/v4plf')
+  const { data } = await axios.get('/bins/v4plf')
   res.send({
     ...data,
     sum: 10,
