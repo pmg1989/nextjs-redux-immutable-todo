@@ -4,7 +4,7 @@
   "main": "server/index.js",
   "description": "Next.js redux starter with Express, Redux, less, and Immutable.",
   "scripts": {
-    "clean": "rimraf node_modules/.cache build",
+    "clean": "rimraf build",
     "dev": "yarn run clean && REACT_APP_API_ENV=dev nodemon -w server server/index.js",
     "dev:staging": "yarn run clean && REACT_APP_API_ENV=staging nodemon -w server server/index.js",
     "dev:release": "yarn run clean && REACT_APP_API_ENV=prod nodemon -w server server/index.js",
