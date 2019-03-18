@@ -56,7 +56,7 @@ export default class extends Component {
         {isEdit ?
           <TaskForm onSave={::this.handleTaskEdit} onBlur={::this.changeEditState} value={name} /> :
           <div>
-            <span className="name" onDoubleClick={::this.changeEditState}
+            <span className="name" onClick={::this.changeEditState}
               style={{
                 textDecoration: done
                  ? 'line-through'
